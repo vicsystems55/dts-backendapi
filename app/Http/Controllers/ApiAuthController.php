@@ -56,15 +56,15 @@ class ApiAuthController extends Controller
             'otp' => $user->otp??''
         ];
 
+        
+                    Mail::to($user->email)
+                    ->send(new Welcome($datax));
 
         try {
 
 
-            Mail::to($user->email)
-            ->send(new Welcome($datax));
-
-            Mail::to($user->email)
-            ->send(new EmailVerification($datax));
+            // Mail::to($user->email)
+            // ->send(new EmailVerification($datax));
 
         } catch (\Throwable $th) {
             // throw $th;

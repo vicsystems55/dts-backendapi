@@ -16,9 +16,11 @@ class Welcome extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
         //
+
+        $this->data = $data;
     }
 
     /**
@@ -28,6 +30,11 @@ class Welcome extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->markdown('mails.welcome',[
+            'data' => $this->data
+        ])
+        ->from('fmf-dts@icreateagency.com', 'FMF-DTS')
+        ->subject("Welcome on board");
+        
     }
 }
