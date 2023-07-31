@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class VisitorsSubmission extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function office(){
+        return $this->belongsTo(Office::class, 'office_id', 'id');
+    }
 }
