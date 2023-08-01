@@ -7,6 +7,7 @@ use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\ApiAuthController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ApprovalStageController;
 use App\Http\Controllers\VisitorProfileController;
 use App\Http\Controllers\SubmissionStatusController;
@@ -41,6 +42,9 @@ Route::resource('departments', DepartmentController::class);
 Route::resource('offices', OfficeController::class);
 
 Route::resource('users', UserProfileController::class);
+
+Route::get('/notifications', [NotificationController::class, 'index'])->middleware('auth:sanctum');
+
 
 
 

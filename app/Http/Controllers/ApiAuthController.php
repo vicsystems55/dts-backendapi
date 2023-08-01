@@ -56,7 +56,7 @@ class ApiAuthController extends Controller
             'otp' => $user->otp??''
         ];
 
-        
+
                     Mail::to($user->email)
                     ->send(new Welcome($datax));
 
@@ -97,7 +97,7 @@ class ApiAuthController extends Controller
                        ], 401);
         }else{
 
-            $user = User::where('email', $request['email'])->firstOrFail();
+            $user = User::with('office')->where('email', $request['email'])->firstOrFail();
 
             $token = $user->createToken('auth_token')->plainTextToken;
 

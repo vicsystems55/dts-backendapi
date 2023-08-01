@@ -30,7 +30,7 @@ class UserProfileController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        if ($user->role == 'visistor') {
+        if ($user->role == 'visitor') {
             # code...
 
             $datax =[
