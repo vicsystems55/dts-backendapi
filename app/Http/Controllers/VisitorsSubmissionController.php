@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Office;
 use App\Models\Notification;
 use Illuminate\Http\Request;
 use App\Mail\SubmissionNotifyMail;
 use App\Models\VisitorsSubmission;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\SubmissionNotifyAdminMail;
 use App\Http\Requests\StoreVisitorsSubmissionRequest;
 use App\Http\Requests\UpdateVisitorsSubmissionRequest;
-use App\Models\Office;
+use App\Models\SubmissionStatus;
 
 class VisitorsSubmissionController extends Controller
 {
@@ -91,7 +93,17 @@ class VisitorsSubmissionController extends Controller
             ]);
         }
 
+
+
         $office = Office::find($submission->office_id);
+
+        SubmissionStatus::create([
+            'visitors_submission_id' => $submission->id,
+            'office_id' => $submission->office_id,
+            'order' => 1
+        ]);
+
+
 
         Notification::create([
             'user_id' => $user->id,
@@ -109,12 +121,16 @@ class VisitorsSubmissionController extends Controller
 
         $datax =[
             'tracking_id' => $submission->tracking_code,
-            'name' => $user->name
+            'name' => $user->name,
+            'officer_name' => $office->officer->name
         ];
 
         Mail::to($user->email)->send(new SubmissionNotifyMail($datax));
 
-        
+        Mail::to($office->officer->email)->send(new SubmissionNotifyAdminMail($datax));
+
+
+
 
 
         return $submission;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\SubmissionStatus;
 use App\Http\Requests\StoreSubmissionStatusRequest;
 use App\Http\Requests\UpdateSubmissionStatusRequest;
@@ -13,9 +14,17 @@ class SubmissionStatusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
+
+        $request->all();
+        $submissionStatus = SubmissionStatus::
+        with(['visitors_submission', 'office'])->
+        where('visitors_submission_id', $request->visitors_submission_id)->get();
+
+        return $submissionStatus;
+
     }
 
     /**
@@ -35,9 +44,12 @@ class SubmissionStatusController extends Controller
      * @param  \App\Models\SubmissionStatus  $submissionStatus
      * @return \Illuminate\Http\Response
      */
-    public function show(SubmissionStatus $submissionStatus)
+    public function show(Request $request)
     {
         //
+        $submissionStatus = SubmissionStatus::where('visitors_submission_id', $request->visitors_submission_id)->get();
+
+        return $submissionStatus;
     }
 
     /**

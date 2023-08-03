@@ -27,4 +27,13 @@ class OfficeController extends Controller
         return $office;
 
     }
+
+    public function update(Request $request, Office $office)
+    {
+        //
+
+        $office->update($request->all());
+
+        return $office;
+    }
 }

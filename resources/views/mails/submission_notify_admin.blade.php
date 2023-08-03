@@ -87,9 +87,9 @@
               <tr>
                 <td class="sm-py-32 sm-px-24" style="font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif; padding: 48px; text-align: center;" align="center">
                   <a href="https://1.envato.market/vuexy_admin">
-                    <img src="{{config('app.url')}}email_assets/images/logo.png" width="155" alt="" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle;">
+                    <img src="images/logo.png" width="155" alt="" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle;">
                   </a>
-                  <h3 style="text-align: center;">FEDERAL MINISTRY OF FINANCE, <BR> BUDGET AND PLANNING</h3>
+                  <h3>FEDERAL MINISTRY OF FINANCE, <BR> BUDGET AND PLANNING</h3>
                 </td>
               </tr>
               <tr>
@@ -97,30 +97,34 @@
                   <table style="font-family: 'Montserrat',Arial,sans-serif; width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                     <tr>
                       <td class="sm-px-24" style="--bg-opacity: 1; background-color: #ffffff; background-color: rgba(255, 255, 255, var(--bg-opacity)); border-radius: 4px; font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 24px; padding: 48px; text-align: left; --text-opacity: 1; color: #626262; color: rgba(98, 98, 98, var(--text-opacity));" bgcolor="rgba(255, 255, 255, var(--bg-opacity))" align="left">
-                        <p style="font-weight: 600; font-size: 18px; margin-bottom: 0;">Hello</p>
-                        <p style="font-weight: 700; font-size: 20px; margin-top: 0; --text-opacity: 1; color: #ff5850; color: rgba(255, 88, 80, var(--text-opacity));">{{strtoupper($data['name']) }}</p>
-                        <p class="sm-leading-32" style="font-weight: 600; font-size: 20px; margin: 0 0 24px; --text-opacity: 1; color: #263238; color: rgba(38, 50, 56, var(--text-opacity));">
-                            Welcome to Enterprise Incoming and Outgoing Mails and Documents Management System - Tracking and Follow-Up!
-                        </p>
+                        <p style="font-weight: 600; font-size: 18px; margin-bottom: 0;">Dear</p>
+                        <p style="font-weight: 700; font-size: 20px; margin-top: 0; --text-opacity: 1; color: #ff5850; color: rgba(255, 88, 80, var(--text-opacity));">{{$data['officer_name']}}</p>
+
                         <!-- <a href="https://1.envato.market/vuexy_admin">
-                          <img src="{{config('app.url')}}email_assets/images/item.jpg" width="500" alt="Vuexy Admin" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle;">
+                          <img src="images/item.jpg" width="500" alt="Vuexy Admin" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle;">
                         </a> -->
                         <p style="margin: 24px 0;">
 
-                          Congratulations on joining our growing community of efficient and organized professionals. Our application is designed to streamline your submission process to the ministry by providing real-time updates on each stage of your documents and mails. No more waiting in the dark – you'll be informed every step of the way!
+                            Greetings! We hope this email finds you well. We are excited to notify you that a brand-new document has just landed on your virtual desk. Its unique identification number is {{$data['tracking_id']}}.
                         </p>
 
                         <p style="margin: 24px 0;">
 
-                            With our user-friendly platform, you'll receive notifications directly to the email address you used to sign up. Any relevant remarks or comments on your submissions will be instantly delivered to keep you in the loop.
+                            To ensure a smooth and swift processing, we kindly request you to log in to our user-friendly web application at <a href="">https://doc-tracking.gov.ng</a>. Once you've accessed the platform, head straight to the "Documents" section to locate and handle the document with the provided ID.
                         </p>
 
                         <p style="margin: 24px 0;">
-                            To ensure you enjoy the full functionality of our system, we kindly ask you to update your profile. By doing so, you'll unlock a range of features to enhance your experience and maximize productivity.
+
+                            Your immediate attention to this matter is highly appreciated. As part of our commitment to efficiency and productivity, we rely on your prompt action to maintain seamless workflow and meet important deadlines.
                         </p>
+
                         <p style="margin: 24px 0;">
-                            We're thrilled to have you on board, and we look forward to revolutionizing the way you manage your incoming and outgoing mails and documents. If you have any questions or need assistance, don't hesitate to reach out to our support team. Welcome to a more organized and efficient way of working!
+
+                            In the unlikely event of any technical hiccups while accessing the application or locating the document, our enthusiastic IT support team is ready to assist you. Just reach out to them at support@fmg-dts.gov.ng, and they'll be more than happy to lend a hand.
                         </p>
+
+
+
                         <table style="font-family: 'Montserrat',Arial,sans-serif; width: 100%;" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                           <tr>
                             <td style="font-family: 'Montserrat',Arial,sans-serif; padding-top: 32px; padding-bottom: 32px;">
@@ -141,11 +145,11 @@
                     <tr>
                       <td style="font-family: Montserrat, -apple-system, 'Segoe UI', sans-serif; font-size: 12px; padding-left: 48px; padding-right: 48px; --text-opacity: 1; color: #eceff1; color: rgba(236, 239, 241, var(--text-opacity));">
                         <p align="center" style="cursor: default; margin-bottom: 16px;">
-                          <a href="https://www.facebook.com/De'iCON Consult Limiteds" style="--text-opacity: 1; color: #263238; color: rgba(38, 50, 56, var(--text-opacity)); text-decoration: none;"><img src="{{config('app.url')}}email_assets/images/facebook.png" width="17" alt="Facebook" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle; margin-right: 12px;"></a>
+                          <a href="https://www.facebook.com/De'iCON Consult Limiteds" style="--text-opacity: 1; color: #263238; color: rgba(38, 50, 56, var(--text-opacity)); text-decoration: none;"><img src="images/facebook.png" width="17" alt="Facebook" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle; margin-right: 12px;"></a>
                           &bull;
-                          <a href="https://twitter.com/De'iCON Consult Limiteds" style="--text-opacity: 1; color: #263238; color: rgba(38, 50, 56, var(--text-opacity)); text-decoration: none;"><img src="{{config('app.url')}}email_assets/images/twitter.png" width="17" alt="Twitter" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle; margin-right: 12px;"></a>
+                          <a href="https://twitter.com/De'iCON Consult Limiteds" style="--text-opacity: 1; color: #263238; color: rgba(38, 50, 56, var(--text-opacity)); text-decoration: none;"><img src="images/twitter.png" width="17" alt="Twitter" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle; margin-right: 12px;"></a>
                           &bull;
-                          <a href="https://www.instagram.com/De'iCON Consult Limiteds" style="--text-opacity: 1; color: #263238; color: rgba(38, 50, 56, var(--text-opacity)); text-decoration: none;"><img src="{{config('app.url')}}email_assets/images/instagram.png" width="17" alt="Instagram" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle; margin-right: 12px;"></a>
+                          <a href="https://www.instagram.com/De'iCON Consult Limiteds" style="--text-opacity: 1; color: #263238; color: rgba(38, 50, 56, var(--text-opacity)); text-decoration: none;"><img src="images/instagram.png" width="17" alt="Instagram" style="border: 0; max-width: 100%; line-height: 100%; vertical-align: middle; margin-right: 12px;"></a>
                         </p>
                         <p style="--text-opacity: 1; color: #263238; color: rgba(38, 50, 56, var(--text-opacity));">
                           Use of our service and website is subject to our

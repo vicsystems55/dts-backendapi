@@ -15,6 +15,11 @@ class CreateSubmissionStatusesTable extends Migration
     {
         Schema::create('submission_statuses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('visitors_submission_id');
+            $table->foreignId('office_id');
+            $table->integer('order');
+            $table->longText('remark')->nullable();
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }
