@@ -41,6 +41,45 @@ class VisitorsSubmissionController extends Controller
     {
         //
 
+
+
+        if ($request->dispatch) {
+            # code...
+
+
+
+
+            $request->all();
+            $submission = SubmissionStatus::updateOrCreate([
+                'visitors_submission_id' => $request->visitors_submission_id,
+                'office_id' => $request->office_id,
+            ],[
+                'visitors_submission_id' => $request->visitors_submission_id,
+                'office_id' => $request->office_id,
+                'remark' => $request->remark,
+                'order' => 1
+            ]);
+
+            $visitor_submission = VisitorsSubmission::with('visitor')->find($request->visitors_submission_id);
+
+            Notification::create([
+                'user_id' => $visitor_submission->visitor->id,
+                'office_id' => $request->office_id,
+                'subject' => 'New Submission',
+                'msg' => 'Your submission has been escalated to the next office',
+            ]);
+            $office = Office::with('officer')->find($request->office_id);
+
+            Notification::create([
+                'user_id' => $office->officer->id,
+                'office_id' => $request->office_id,
+                'subject' => 'New Submission Alert',
+                'msg' => 'A new submission has been received',
+            ]);
+
+
+        }else{
+
         $user = User::where('email', $request->email)->first();
 
         if ($user) {
@@ -128,6 +167,7 @@ class VisitorsSubmissionController extends Controller
         Mail::to($user->email)->send(new SubmissionNotifyMail($datax));
 
         Mail::to($office->officer->email)->send(new SubmissionNotifyAdminMail($datax));
+        }
 
 
 

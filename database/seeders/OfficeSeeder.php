@@ -20,50 +20,58 @@ class OfficeSeeder extends Seeder
             [
                 "name" => "The Honourable Ministers Registry",
                 "abbrev" => "HMR",
+                "user_id" => null
             ],
 
             [
                 "name" => "The Permanent Secretary Finance (Special Duties) Registry",
                 "abbrev" => "PSFR-SD",
+                "user_id" => null
             ],
-            
+
             [
                 "name" => "The Permanent Secretary Finance Registry",
                 "abbrev" => "PSFR",
+                "user_id" => null
             ],
 
             [
                 "name" => "The Director ICT Registry",
                 "abbrev" => "D-ICT",
+                "user_id" => 1
             ],
 
             [
                 "name" => "The Deputy Director ICT Registry",
                 "abbrev" => "DD-ICT",
+                "user_id" => 2
             ],
 
             [
                 "name" => "The Assistant Director ICT Registry",
                 "abbrev" => "AD-ICT",
+                "user_id" => 3
             ],
 
             [
                 "name" => "The CPA ICT Registry",
                 "abbrev" => "CPA-ICT",
+                "user_id" => 4
             ],
 
             [
                 "name" => "The CCE ICT Registry ",
                 "abbrev" => "CCE-ICT",
+                "user_id" => 5
             ],
 
 
 
 
-            
-            
-            
+
+
+
         ]);
-            
+
     }
 }
